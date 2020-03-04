@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+.SnackBarHolder {
+  position: fixed;
+  z-index: 50;
+  bottom: 20px;
+  left: 50%;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -moz-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -ms-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -o-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@-webkit-keyframes fadein {
+ from {bottom: 0; opacity: 0;}
+ to {bottom: 20px; opacity: 1;}
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes fadein {
+ from {bottom: 0; opacity: 0;}
+ to {bottom: 20px; opacity: 1;}
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@-webkit-keyframes fadeout {
+ from {bottom: 20px; opacity: 1;}
+ to {bottom: 0; opacity: 0;}
 }
-
-.App-link {
-  color: #61dafb;
+@keyframes fadeout {
+ from {bottom: 20px; opacity: 1;}
+ to {bottom: 0; opacity: 0;}
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SnackBar {
+ width: 250px;
+ padding: 10px;
+ background: black;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.SnackBar > span {
+ color: white;
+}
+.SnackBar > button {
+ background: transparent;
+ color: #00b4d2;
+ outline: none;
+ border: 0;
+ cursor: pointer;
 }
